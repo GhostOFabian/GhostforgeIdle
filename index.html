@@ -266,7 +266,6 @@ footer{color:var(--mute);font-size:.9rem;border-top:1px solid var(--line);paddin
   window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();ip=e;ib.hidden=false});
   ib.onclick=function(){if(!ip)return;ip.prompt();ip.userChoice.finally(function(){ip=null;ib.hidden=true})};
   // Direkt ins Spiel, wenn als App geöffnet
-  if(window.matchMedia&&matchMedia('(display-mode: standalone)').matches&&!/game\//.test(location.pathname))location.replace(GAME);
   if('serviceWorker' in navigator&&location.protocol.indexOf('http')===0)window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});
 })();
 </script>
