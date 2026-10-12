@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ghostforge Idle</title>
-<meta name="description" content="Ghostforge Idle: Browser-Spiel. Schmiede Geister-Waffen, besiege Elementar-Bosse und farme auch ohne dich. Direkt im Handy-Fenster spielbar.">
+<meta name="description" content="Ghostforge Idle: kostenloses Browser-Idle-RPG. 6 Klassen, Waffen-Sets, Gems, Runen, Meisterwerke bis +15, 55 Bosse, Abgrund, Raid und 51 Prestige-Skins. Spielbar auf Handy und PC.">
 <meta name="theme-color" content="#15112a">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/favicon-48.png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <meta property="og:title" content="Ghostforge Idle">
-<meta property="og:description" content="Schmiede Geister-Waffen. Besiege jeden Boss. Kostenlos im Browser.">
+<meta property="og:description" content="6 Klassen, Sets, Meisterwerke, 55 Bosse, 51 Prestige-Skins. Kostenlos im Browser.">
 <meta property="og:image" content="shot-kampf.jpg">
 <meta name="referrer" content="no-referrer">
 <style>
@@ -80,7 +80,7 @@ nav a:hover{color:var(--fg);background:var(--bg2)}
 section{margin-bottom:64px}
 h2{font-family:var(--f-display);font-size:clamp(1.8rem,4vw,2.4rem);margin:0 0 8px;text-wrap:balance}
 .sub{color:var(--mute);margin:0 0 26px;max-width:40em}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
 .card h3{margin:0 0 6px;font-size:1.1rem}
 .card p{margin:0;color:var(--mute);font-size:.98rem}
@@ -100,6 +100,35 @@ footer{color:var(--mute);font-size:.9rem;border-top:1px solid var(--line);paddin
   .facts div:nth-child(2){border-right:0}
   .facts div:nth-child(-n+2){border-bottom:1px solid var(--line)}
 }
+
+/* Erweiterte Abschnitte */
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;align-items:start}
+.shots figure{margin:0;display:grid;gap:10px}
+.shots img{width:100%;height:auto;border-radius:18px;border:1px solid var(--line);box-shadow:0 20px 40px -24px #000;background:var(--card)}
+.shots figcaption{color:var(--mute);font-size:.95rem}
+.shots figcaption b{color:var(--fg);display:block}
+.cls{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px}
+.cls .card{padding:18px}
+.cls .ic{font-size:1.8rem;line-height:1;display:block;margin-bottom:6px}
+.cls .card h3{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.cls .card h3 small{color:var(--mute);font-weight:500;font-size:.85rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px;padding:0;list-style:none}
+.chip{border:2px solid var(--c,var(--line));border-radius:999px;padding:4px 14px;font-weight:700;font-size:.92rem;background:var(--bg2);color:var(--c,var(--fg))}
+.chip.relic{border-color:transparent;background:linear-gradient(var(--bg2),var(--bg2)) padding-box,linear-gradient(90deg,#ff6b6b,#ffd93d,#6bff95,#6bc4ff,#c06bff) border-box;color:var(--fg)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:16px}
+.list{margin:10px 0 0;padding-left:1.1em;color:var(--mute);font-size:.97rem}
+.list li{margin-bottom:6px}
+.list b{color:var(--fg)}
+.skins{display:flex;gap:14px;overflow-x:auto;padding:4px 2px 16px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+.skin{flex:0 0 140px;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 10px 12px;text-align:center}
+.skin img{display:block;width:100%;height:auto;border-radius:10px;background:#241d45}
+.skin b{display:block;margin-top:8px;font-size:.92rem;line-height:1.25}
+.skin span{color:var(--gold);font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.skin.top{border-color:var(--gold);box-shadow:0 0 28px -10px var(--gold)}
+.faqbox{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+.faqbox p{margin:0;color:var(--mute);max-width:44em}
+.faqbox b{color:var(--fg)}
+@media (max-width:860px){.facts{grid-template-columns:repeat(2,1fr)}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
@@ -109,6 +138,9 @@ footer{color:var(--mute);font-size:.9rem;border-top:1px solid var(--line);paddin
     <a class="brand" href="#"><img src="icons/icon-192.png" alt="" width="30" height="30">Ghostforge Idle</a>
     <nav aria-label="Navigation">
       <a href="#funktionen" data-de="Funktionen" data-en="Features">Funktionen</a>
+      <a href="#klassen" data-de="Klassen" data-en="Classes">Klassen</a>
+      <a href="#items" data-de="Items &amp; Sets" data-en="Items &amp; sets">Items &amp; Sets</a>
+      <a href="#skins" data-de="Skins" data-en="Skins">Skins</a>
       <a href="#installieren" data-de="Installieren" data-en="Install">Installieren</a>
       <span class="lang" role="group" aria-label="Sprache"><button id="bDe" aria-pressed="true">DE</button><button id="bEn" aria-pressed="false">EN</button></span>
     </nav>
@@ -118,7 +150,7 @@ footer{color:var(--mute);font-size:.9rem;border-top:1px solid var(--line);paddin
     <div class="hero">
       <div>
         <h1 data-de="Schmiede Geister-Waffen. <em>Besiege jeden Boss.</em>" data-en="Forge ghost weapons. <em>Beat every boss.</em>">Schmiede Geister-Waffen. <em>Besiege jeden Boss.</em></h1>
-        <p class="lead" data-de="Ein Browser-Spiel für Handy und PC: Waffen sammeln, mit Gems, Runen und Scrolls verbessern, Elementar-Bosse in Echtzeit besiegen und im Idle-Modus weiterfarmen." data-en="A browser game for phone and desktop: collect weapons, improve them with gems, runes and scrolls, beat element bosses in real time and keep farming in idle mode.">Ein Browser-Spiel für Handy und PC: Waffen sammeln, mit Gems, Runen und Scrolls verbessern, Elementar-Bosse in Echtzeit besiegen und im Idle-Modus weiterfarmen.</p>
+        <p class="lead" data-de="Ein kostenloses Browser-Idle-RPG für Handy und PC: Sammle Waffen aus sechs Klassen, schmiede sie mit Gems, Runen und Scrolls zu Meisterwerken, besiege Elementar-Bosse in Echtzeit, farme im Idle-Modus weiter und schalte mit jedem Prestige einen neuen Skin frei." data-en="A free browser idle RPG for phone and desktop: collect weapons from six classes, forge them into masterworks with gems, runes and scrolls, beat element bosses in real time, keep farming in idle mode and unlock a new skin with every prestige.">Ein kostenloses Browser-Idle-RPG für Handy und PC: Sammle Waffen aus sechs Klassen, schmiede sie mit Gems, Runen und Scrolls zu Meisterwerken, besiege Elementar-Bosse in Echtzeit, farme im Idle-Modus weiter und schalte mit jedem Prestige einen neuen Skin frei.</p>
         <div class="cta">
           <a class="btn main only-mobile" href="game/spiel.html" data-de="▶ Vollbild spielen" data-en="▶ Play fullscreen">▶ Vollbild spielen</a>
           <button class="btn main only-desktop" id="heroPlay" data-de="▶ Im Handy-Fenster spielen" data-en="▶ Play in phone window">▶ Im Handy-Fenster spielen</button>
@@ -149,23 +181,86 @@ footer{color:var(--mute);font-size:.9rem;border-top:1px solid var(--line);paddin
     </div>
 
     <div class="facts" role="list">
+      <div role="listitem"><b>6</b><span data-de="Klassen aus 6 Waffentypen" data-en="classes from 6 weapon types">Klassen aus 6 Waffentypen</span></div>
       <div role="listitem"><b>55</b><span data-de="Bosse in 11 Stufen" data-en="bosses in 11 stages">Bosse in 11 Stufen</span></div>
       <div role="listitem"><b>+15</b><span data-de="Meisterwerk-Upgrades" data-en="masterwork upgrades">Meisterwerk-Upgrades</span></div>
-      <div role="listitem"><b>75 + 150</b><span data-de="Level plus Zusatzlevel" data-en="levels plus bonus levels">Level plus Zusatzlevel</span></div>
-      <div role="listitem"><b>50</b><span data-de="Prestige-Stufen" data-en="prestige ranks">Prestige-Stufen</span></div>
+      <div role="listitem"><b>51</b><span data-de="Prestige-Skins" data-en="prestige skins">Prestige-Skins</span></div>
     </div>
 
     <section id="funktionen">
       <h2 data-de="Was dich erwartet" data-en="What awaits you">Was dich erwartet</h2>
       <p class="sub" data-de="Ein Spiel zum Planen und zum Zuschauen: Du baust deine Waffen, der Kampf läuft in Echtzeit." data-en="A game for planning and for watching: you build your weapons, the fight runs in real time.">Ein Spiel zum Planen und zum Zuschauen: Du baust deine Waffen, der Kampf läuft in Echtzeit.</p>
       <div class="grid">
-        <article class="card"><span class="tag" data-de="Schmiede" data-en="Forge">Schmiede</span><h3 data-de="Upgrades mit Risiko" data-en="Upgrades with risk">Upgrades mit Risiko</h3><p data-de="Gem-Sets, Chaos- und Element-Runen, Scrolls und Glücks-Charms. Ab +7 wird die Waffe zum Meisterwerk bis +15." data-en="Gem sets, chaos and element runes, scrolls and luck charms. From +7 the weapon becomes a masterwork up to +15.">Gem-Sets, Chaos- und Element-Runen, Scrolls und Glücks-Charms. Ab +7 wird die Waffe zum Meisterwerk bis +15.</p></article>
-        <article class="card"><span class="tag" data-de="Kampf" data-en="Combat">Kampf</span><h3 data-de="Echtzeit mit Wellen und Boss" data-en="Real time with waves and boss">Echtzeit mit Wellen und Boss</h3><p data-de="Angriffe laden sich auf, Skills und Schild-Buff haben Abklingzeiten, Boss-Crits konterst du im Ausweich-Minispiel." data-en="Attacks charge up, skills and shield buff have cooldowns, you counter boss crits in a dodge minigame.">Angriffe laden sich auf, Skills und Schild-Buff haben Abklingzeiten, Boss-Crits konterst du im Ausweich-Minispiel.</p></article>
-        <article class="card"><span class="tag">Idle</span><h3 data-de="Farmt auch ohne dich" data-en="Farms without you">Farmt auch ohne dich</h3><p data-de="Starte eine Idle-Farm für bis zu zwei Stunden und hole XP, Gold und Beute ab." data-en="Start an idle farm for up to two hours and collect XP, gold and loot.">Starte eine Idle-Farm für bis zu zwei Stunden und hole XP, Gold und Beute ab.</p></article>
-        <article class="card"><span class="tag" data-de="Elemente" data-en="Elements">Elemente</span><h3 data-de="Vier Elemente, fünf Slots" data-en="Four elements, five slots">Vier Elemente, fünf Slots</h3><p data-de="Feuer, Wasser, Erde und Dunkel. Auto-Waffen wechseln selbst auf die passende Waffe." data-en="Fire, water, earth and dark. Auto weapons switch to the right one by themselves.">Feuer, Wasser, Erde und Dunkel. Auto-Waffen wechseln selbst auf die passende Waffe.</p></article>
-        <article class="card"><span class="tag" data-de="Charakter" data-en="Character">Charakter</span><h3 data-de="Stats, Ringe, Rüstung" data-en="Stats, rings, armor">Stats, Ringe, Rüstung</h3><p data-de="Punkte auf Angriff, Leben, Treffer und Glück. Ringe bringen Set-Boni und Schildbruch." data-en="Points into attack, life, accuracy and luck. Rings bring set bonuses and shield break.">Punkte auf Angriff, Leben, Treffer und Glück. Ringe bringen Set-Boni und Schildbruch.</p></article>
-        <article class="card"><span class="tag" data-de="Langzeit" data-en="Long term">Langzeit</span><h3 data-de="Prestige, Events, Abgrund" data-en="Prestige, events, abyss">Prestige, Events, Abgrund</h3><p data-de="Nach Level 225 startest du neu und wirst dauerhaft stärker. Dazu Event-Bosse und ein endloser Abgrund." data-en="After level 225 you start over and get permanently stronger. Plus event bosses and an endless abyss.">Nach Level 225 startest du neu und wirst dauerhaft stärker. Dazu Event-Bosse und ein endloser Abgrund.</p></article>
+        <article class="card"><span class="tag" data-de="Schmiede" data-en="Forge">Schmiede</span><h3 data-de="Upgrades mit Risiko" data-en="Upgrades with risk">Upgrades mit Risiko</h3><p data-de="Gem-Sets (T1 bis T8), Chaos- und Element-Runen, Scrolls und Glücks-Charms. Bis +9 bleibt die Waffe sicher, danach hilft ein Schutz-Charm. Ab +7 wird eine Legendary-, Mythic- oder Relic-Waffe zum Meisterwerk bis +15 und nicht mehr zerstörbar." data-en="Gem sets (T1 to T8), chaos and element runes, scrolls and luck charms. Up to +9 your weapon is safe, after that a protection charm helps. From +7 a legendary, mythic or relic weapon becomes a masterwork up to +15 and can no longer be destroyed.">Gem-Sets (T1 bis T8), Chaos- und Element-Runen, Scrolls und Glücks-Charms. Bis +9 bleibt die Waffe sicher, danach hilft ein Schutz-Charm. Ab +7 wird eine Legendary-, Mythic- oder Relic-Waffe zum Meisterwerk bis +15 und nicht mehr zerstörbar.</p></article>
+        <article class="card"><span class="tag" data-de="Kampf" data-en="Combat">Kampf</span><h3 data-de="Echtzeit mit Wellen und Boss" data-en="Real time with waves and boss">Echtzeit mit Wellen und Boss</h3><p data-de="Angriffe laden sich auf, Skills und Schild-Buff haben Abklingzeiten. Boss-Crits konterst du im Ausweich-Minispiel. Kampfserien laufen in Sekunden durch." data-en="Attacks charge up, skills and shield buff have cooldowns. You counter boss crits in a dodge minigame. Fight series run through in seconds.">Angriffe laden sich auf, Skills und Schild-Buff haben Abklingzeiten. Boss-Crits konterst du im Ausweich-Minispiel. Kampfserien laufen in Sekunden durch.</p></article>
+        <article class="card"><span class="tag" data-de="Idle" data-en="Idle">Idle</span><h3 data-de="Farmt auch ohne dich" data-en="Farms without you">Farmt auch ohne dich</h3><p data-de="Starte eine Idle-Farm von 5 Minuten bis zu 8 Stunden. Je länger sie läuft, desto größer die Zeit-Boni auf Beute und Gold. Sie rechnet auch bei geschlossener Seite weiter." data-en="Start an idle farm from 5 minutes up to 8 hours. The longer it runs, the bigger the time bonuses on loot and gold. It keeps counting even with the page closed.">Starte eine Idle-Farm von 5 Minuten bis zu 8 Stunden. Je länger sie läuft, desto größer die Zeit-Boni auf Beute und Gold. Sie rechnet auch bei geschlossener Seite weiter.</p></article>
+        <article class="card"><span class="tag" data-de="Elemente" data-en="Elements">Elemente</span><h3 data-de="Vier Elemente, vier Auto-Slots" data-en="Four elements, four auto slots">Vier Elemente, vier Auto-Slots</h3><p data-de="Feuer, Wasser, Erde und Dunkel. Die Boss-Schwäche verdoppelt deinen Element-Bonus, und deine Auto-Slots wechseln selbst auf die passende Waffe." data-en="Fire, water, earth and dark. A boss weakness doubles your element bonus, and your auto slots switch to the matching weapon by themselves.">Feuer, Wasser, Erde und Dunkel. Die Boss-Schwäche verdoppelt deinen Element-Bonus, und deine Auto-Slots wechseln selbst auf die passende Waffe.</p></article>
+        <article class="card"><span class="tag" data-de="Charakter" data-en="Character">Charakter</span><h3 data-de="Stats, Klasse, Ringe" data-en="Stats, class, rings">Stats, Klasse, Ringe</h3><p data-de="Eigenes Startmenü mit „Willkommen zurück“. Stat-Punkte auf Angriff, Leben, Treffer und Glück, die Hauptwaffe bestimmt deine Klasse, Ringe bringen Set-Boni." data-en="Own start menu with “welcome back”. Stat points into attack, life, accuracy and luck, your main weapon decides your class, rings bring set bonuses.">Eigenes Startmenü mit „Willkommen zurück“. Stat-Punkte auf Angriff, Leben, Treffer und Glück, die Hauptwaffe bestimmt deine Klasse, Ringe bringen Set-Boni.</p></article>
+        <article class="card"><span class="tag" data-de="Passiver Baum" data-en="Passive tree">Passiver Baum</span><h3 data-de="Skills mit Ränge-Wahl" data-en="Skills with rank choices">Skills mit Ränge-Wahl</h3><p data-de="Jedes Zusatzlevel ab 75 und jedes Prestige gibt Skill-Punkte. Mehr Ränge als Punkte: Du musst dich für einen Build entscheiden, Zurücksetzen kostet Gold." data-en="Every bonus level from 75 and every prestige gives skill points. There are more ranks than points: you have to commit to a build, resetting costs gold.">Jedes Zusatzlevel ab 75 und jedes Prestige gibt Skill-Punkte. Mehr Ränge als Punkte: Du musst dich für einen Build entscheiden, Zurücksetzen kostet Gold.</p></article>
+        <article class="card"><span class="tag" data-de="Endgame" data-en="Endgame">Endgame</span><h3 data-de="Abgrund, Raid, Events" data-en="Abyss, raid, events">Abgrund, Raid, Events</h3><p data-de="Ein Turm mit 75 Etagen, ein Raid-Boss jeden Mittwoch und Samstag und Event-Bosse alle 10 Level mit Splittern, Holy-Gems und Erweckten Runen." data-en="A tower of 75 floors, a raid boss every Wednesday and Saturday, and event bosses every 10 levels with shards, holy gems and awakened runes.">Ein Turm mit 75 Etagen, ein Raid-Boss jeden Mittwoch und Samstag und Event-Bosse alle 10 Level mit Splittern, Holy-Gems und Erweckten Runen.</p></article>
+        <article class="card"><span class="tag" data-de="Langzeit" data-en="Long term">Langzeit</span><h3 data-de="Prestige bis 50" data-en="Prestige up to 50">Prestige bis 50</h3><p data-de="Nach Level 225 setzt du zurück und wirst dauerhaft stärker: mehr Leben und Schaden, Stat- und Skill-Punkte und ein neuer Charakter-Skin." data-en="After level 225 you reset and become permanently stronger: more life and damage, stat and skill points and a new character skin.">Nach Level 225 setzt du zurück und wirst dauerhaft stärker: mehr Leben und Schaden, Stat- und Skill-Punkte und ein neuer Charakter-Skin.</p></article>
+        <article class="card"><span class="tag" data-de="Komfort" data-en="Comfort">Komfort</span><h3 data-de="Gebaut für lange Sitzungen" data-en="Built for long sessions">Gebaut für lange Sitzungen</h3><p data-de="Auto-Verkauf, Slots automatisch befüllen, Rückkauf, Tresor, Erfolge, Tagesbonus, Glücksbänder, Kurz-Anleitung und ein eingebautes FAQ. Deutsch und Englisch." data-en="Auto-sell, auto-fill slots, buy-back, vault, achievements, daily bonus, luck wheels, quick guide and a built-in FAQ. German and English.">Auto-Verkauf, Slots automatisch befüllen, Rückkauf, Tresor, Erfolge, Tagesbonus, Glücksbänder, Kurz-Anleitung und ein eingebautes FAQ. Deutsch und Englisch.</p></article>
       </div>
+    </section>
+
+    <section id="screens">
+      <h2 data-de="So sieht es aus" data-en="What it looks like">So sieht es aus</h2>
+      <p class="sub" data-de="Echte Ausschnitte aus dem Spiel, hier mit einem Charakter auf Level 75 und Prestige 21." data-en="Real captures from the game, here with a level 75 character on prestige 21.">Echte Ausschnitte aus dem Spiel, hier mit einem Charakter auf Level 75 und Prestige 21.</p>
+      <div class="shots">
+        <figure><img src="img/charakter.webp" width="480" height="769" loading="lazy" alt="Charakter-Menü mit Level, Prestige und Stat-Punkten"><figcaption><b data-de="Charakter" data-en="Character">Charakter</b> <span data-de="Dein Held mit Level, Prestige, Stat-Punkten und Klasse." data-en="Your hero with level, prestige, stat points and class.">Dein Held mit Level, Prestige, Stat-Punkten und Klasse.</span></figcaption></figure>
+        <figure><img src="img/upgrade.webp" width="480" height="769" loading="lazy" alt="Upgrade-Blume mit Meisterwerk-Waffe und Gem-Slots"><figcaption><b data-de="Upgrade-Blume" data-en="Upgrade flower">Upgrade-Blume</b> <span data-de="Vier Gem-Slots und eine Rune um deine Waffe. Meisterwerke leuchten in ihrem Element." data-en="Four gem slots and a rune around your weapon. Masterworks glow in their element.">Vier Gem-Slots und eine Rune um deine Waffe. Meisterwerke leuchten in ihrem Element.</span></figcaption></figure>
+        <figure><img src="img/inventar.webp" width="480" height="769" loading="lazy" alt="Inventar mit Waffen, Ringen, Kisten und Kombinieren"><figcaption><b data-de="Inventar" data-en="Inventory">Inventar</b> <span data-de="Waffen, Ressourcen, Kisten, Ringe, Tresor, Werkzeuge und Kombinieren." data-en="Weapons, resources, chests, rings, vault, tools and combining.">Waffen, Ressourcen, Kisten, Ringe, Tresor, Werkzeuge und Kombinieren.</span></figcaption></figure>
+      </div>
+    </section>
+
+    <section id="klassen">
+      <h2 data-de="Sechs Klassen, ein Wechsel entfernt" data-en="Six classes, one swap away">Sechs Klassen, ein Wechsel entfernt</h2>
+      <p class="sub" data-de="Deine ausgerüstete Hauptwaffe bestimmt die Klasse. Wechselst du die Waffe, wechselst du die Klasse, und jede Waffe kann Hauptwaffe sein. So probierst du Builds ohne Neustart aus." data-en="Your equipped main weapon decides your class. Swap the weapon and you swap the class, and any weapon can be your main weapon. So you can try builds without restarting.">Deine ausgerüstete Hauptwaffe bestimmt die Klasse. Wechselst du die Waffe, wechselst du die Klasse, und jede Waffe kann Hauptwaffe sein. So probierst du Builds ohne Neustart aus.</p>
+      <div class="cls"><article class="card"><span class="ic" aria-hidden="true">🛡</span><h3><span data-de="Krieger" data-en="Warrior">Krieger</span> <small data-de="Schwert" data-en="Sword">Schwert</small></h3><p data-de="Tank: mehr Leben und Parry." data-en="Tank: more life and parry.">Tank: mehr Leben und Parry.</p></article><article class="card"><span class="ic" aria-hidden="true">🗡</span><h3><span data-de="Schurke" data-en="Rogue">Schurke</span> <small data-de="Dolch" data-en="Dagger">Dolch</small></h3><p data-de="Mehr kritische Treffer." data-en="More critical hits.">Mehr kritische Treffer.</p></article><article class="card"><span class="ic" aria-hidden="true">🔮</span><h3><span data-de="Magier" data-en="Mage">Magier</span> <small data-de="Stab" data-en="Staff">Stab</small></h3><p data-de="Schnellere Zauber, mehr Element-Schaden." data-en="Faster spells, more element damage.">Schnellere Zauber, mehr Element-Schaden.</p></article><article class="card"><span class="ic" aria-hidden="true">🏹</span><h3><span data-de="Jäger" data-en="Hunter">Jäger</span> <small data-de="Speer" data-en="Spear">Speer</small></h3><p data-de="Durchschlag und Schaden." data-en="Pierce and damage.">Durchschlag und Schaden.</p></article><article class="card"><span class="ic" aria-hidden="true">⛓</span><h3><span data-de="Dompteur" data-en="Tamer">Dompteur</span> <small data-de="Peitsche" data-en="Whip">Peitsche</small></h3><p data-de="Doppeltreffer und Treffsicherheit." data-en="Double hits and accuracy.">Doppeltreffer und Treffsicherheit.</p></article><article class="card"><span class="ic" aria-hidden="true">🎯</span><h3><span data-de="Schütze" data-en="Marksman">Schütze</span> <small data-de="Armbrust" data-en="Crossbow">Armbrust</small></h3><p data-de="Schaden und Schildbruch." data-en="Damage and shield break.">Schaden und Schildbruch.</p></article></div>
+    </section>
+
+    <section id="items">
+      <h2 data-de="Items, Sets und Runen" data-en="Items, sets and runes">Items, Sets und Runen</h2>
+      <p class="sub" data-de="Sieben Rarities, Meisterwerke und ein Set-System für Gems und Ringe: Die Beute hat Tiefe." data-en="Seven rarities, masterworks and a set system for gems and rings: loot has depth.">Sieben Rarities, Meisterwerke und ein Set-System für Gems und Ringe: Die Beute hat Tiefe.</p>
+      <ul class="chips" aria-label="Rarities"><li class="chip" style="--c:#b4b4c4">Common</li><li class="chip" style="--c:#5fd07a">Uncommon</li><li class="chip" style="--c:#4aa3ff">Rare</li><li class="chip" style="--c:#b06bff">Epic</li><li class="chip" style="--c:#e8b93e">Legendary</li><li class="chip" style="--c:#ff6b81">Mythic</li><li class="chip relic">Relic</li></ul>
+      <div class="two">
+        <article class="card"><span class="tag" data-de="Waffen" data-en="Weapons">Waffen</span><h3 data-de="Waffen &amp;amp; Meisterwerke" data-en="Weapons &amp;amp; masterworks">Waffen &amp; Meisterwerke</h3>
+          <ul class="list">
+            <li data-de="<b>Sechs Typen:</b> Schwert, Dolch, Stab, Speer, Peitsche, Armbrust. Dazu viele Waffen-Namen pro Typ und Element." data-en="<b>Six types:</b> sword, dagger, staff, spear, whip, crossbow. Plus many weapon names per type and element."><b>Sechs Typen:</b> Schwert, Dolch, Stab, Speer, Peitsche, Armbrust. Dazu viele Waffen-Namen pro Typ und Element.</li>
+            <li data-de="<b>Meisterwerk ✦:</b> ab +7 bis +15, nie zerstörbar, nur mit Holy-Gem-Sets zu steigern, leuchtet in der Element-Farbe." data-en="<b>Masterwork ✦:</b> from +7 up to +15, never destroyed, only upgradable with holy gem sets, glows in its element colour."><b>Meisterwerk ✦:</b> ab +7 bis +15, nie zerstörbar, nur mit Holy-Gem-Sets zu steigern, leuchtet in der Element-Farbe.</li>
+            <li data-de="<b>Relic:</b> die stärkste Rarity ab Waffen-Level 75 mit Regenbogen-Glow. Sie kann Gegner betäuben." data-en="<b>Relic:</b> the strongest rarity from weapon level 75 with a rainbow glow. It can stun enemies."><b>Relic:</b> die stärkste Rarity ab Waffen-Level 75 mit Regenbogen-Glow. Sie kann Gegner betäuben.</li>
+            <li data-de="<b>Waffen-Splitter:</b> 30 Legendary- oder 60 Mythic-Splitter ergeben in der Schmiede eine Waffe dieser Rarity." data-en="<b>Weapon shards:</b> 30 legendary or 60 mythic shards forge a weapon of that rarity."><b>Waffen-Splitter:</b> 30 Legendary- oder 60 Mythic-Splitter ergeben in der Schmiede eine Waffe dieser Rarity.</li>
+          </ul></article>
+        <article class="card"><span class="tag" data-de="Gem-Sets" data-en="Gem sets">Gem-Sets</span><h3 data-de="Gems &amp;amp; Holy-Sets" data-en="Gems &amp;amp; holy sets">Gems &amp; Holy-Sets</h3>
+          <ul class="list">
+            <li data-de="<b>Normale Sets T1 bis T8:</b> vier Gems (Feuer, Wasser, Erde, Dunkel) vom gleichen Tier. 10 gleiche Gems werden zu einem des nächsten Tiers kombiniert." data-en="<b>Normal sets T1 to T8:</b> four gems (fire, water, earth, dark) of the same tier. 10 identical gems combine into one of the next tier."><b>Normale Sets T1 bis T8:</b> vier Gems (Feuer, Wasser, Erde, Dunkel) vom gleichen Tier. 10 gleiche Gems werden zu einem des nächsten Tiers kombiniert.</li>
+            <li data-de="<b>Holy-Gem-Sets H1 bis H3:</b> Pflicht für Meisterwerke, selten als Beute von starken Bossen und im Shop." data-en="<b>Holy gem sets H1 to H3:</b> required for masterworks, rare loot from strong bosses and in the shop."><b>Holy-Gem-Sets H1 bis H3:</b> Pflicht für Meisterwerke, selten als Beute von starken Bossen und im Shop.</li>
+            <li data-de="<b>Booster H4 und H5:</b> ab +10 zusätzlich einsetzbar für +4 oder +8 Prozentpunkte Erfolgschance." data-en="<b>Boosters H4 and H5:</b> usable from +10 on top for +4 or +8 percentage points of success chance."><b>Booster H4 und H5:</b> ab +10 zusätzlich einsetzbar für +4 oder +8 Prozentpunkte Erfolgschance.</li>
+          </ul></article>
+        <article class="card"><span class="tag" data-de="Runen &amp; Scrolls" data-en="Runes &amp; scrolls">Runen &amp; Scrolls</span><h3 data-de="Runen &amp;amp; Scrolls" data-en="Runes &amp;amp; scrolls">Runen &amp; Scrolls</h3>
+          <ul class="list">
+            <li data-de="<b>Chaos-Rune:</b> mehr Schaden je Stufe. <b>Element-Rune:</b> +25 % Schaden, gegen die Boss-Schwäche das Doppelte." data-en="<b>Chaos rune:</b> more damage per level. <b>Element rune:</b> +25 % damage, double against the boss weakness."><b>Chaos-Rune:</b> mehr Schaden je Stufe. <b>Element-Rune:</b> +25 % Schaden, gegen die Boss-Schwäche das Doppelte.</li>
+            <li data-de="<b>Erweckte Runen</b> (Lava, Ozean, Urwald, Abgrund): nur für Meisterwerke, +45 % statt +25 %, mit kreisendem Lichtring." data-en="<b>Awakened runes</b> (lava, ocean, jungle, abyss): masterworks only, +45 % instead of +25 %, with an orbiting light ring."><b>Erweckte Runen</b> (Lava, Ozean, Urwald, Abgrund): nur für Meisterwerke, +45 % statt +25 %, mit kreisendem Lichtring.</li>
+            <li data-de="<b>Holy-Rune:</b> nimmt die letzte Rune zurück, ohne dass sie kaputtgeht, und heiligt die Waffe für den nächsten Versuch." data-en="<b>Holy rune:</b> takes back the last rune without breaking it and sanctifies the weapon for the next try."><b>Holy-Rune:</b> nimmt die letzte Rune zurück, ohne dass sie kaputtgeht, und heiligt die Waffe für den nächsten Versuch.</li>
+            <li data-de="<b>Scrolls:</b> springen eine +0-Waffe gleich um mehrere Stufen nach oben, ganz ohne Gems." data-en="<b>Scrolls:</b> can jump a +0 weapon several levels at once, without gems."><b>Scrolls:</b> springen eine +0-Waffe gleich um mehrere Stufen nach oben, ganz ohne Gems.</li>
+          </ul></article>
+        <article class="card"><span class="tag" data-de="Ringe" data-en="Rings">Ringe</span><h3 data-de="Ringe &amp;amp; Set-Boni" data-en="Rings &amp;amp; set bonuses">Ringe &amp; Set-Boni</h3>
+          <ul class="list">
+            <li data-de="<b>Sechs Klassen-Sets:</b> Bollwerk, Schattenpakt, Arkanpakt, Jägerpakt, Kettenpakt und Schützenpakt, je eins pro Waffentyp." data-en="<b>Six class sets:</b> Bulwark, Shadow Pact, Arcane Pact, Hunter Pact, Chain Pact and Marksman Pact, one per weapon type."><b>Sechs Klassen-Sets:</b> Bollwerk, Schattenpakt, Arkanpakt, Jägerpakt, Kettenpakt und Schützenpakt, je eins pro Waffentyp.</li>
+            <li data-de="<b>Set-Bonus:</b> zwei Ringe desselben Sets mit gleicher Tier-Stufe und Rarity wirken bei jeder Klasse. Passt das Set zu deiner Hauptwaffe, kommt ein Zusatz-Effekt dazu." data-en="<b>Set bonus:</b> two rings of the same set with the same tier and rarity work for every class. If the set matches your main weapon, an extra effect is added."><b>Set-Bonus:</b> zwei Ringe desselben Sets mit gleicher Tier-Stufe und Rarity wirken bei jeder Klasse. Passt das Set zu deiner Hauptwaffe, kommt ein Zusatz-Effekt dazu.</li>
+            <li data-de="<b>Utility-Ringe:</b> mehr XP, Gold, Beute oder Upgrade-Glück. Gleiche Ringe lassen sich gegen Gold kombinieren." data-en="<b>Utility rings:</b> more XP, gold, loot or upgrade luck. Identical rings can be combined for gold."><b>Utility-Ringe:</b> mehr XP, Gold, Beute oder Upgrade-Glück. Gleiche Ringe lassen sich gegen Gold kombinieren.</li>
+          </ul></article>
+      </div>
+    </section>
+
+    <section id="skins">
+      <h2 data-de="51 Skins, jeder besser als der letzte" data-en="51 skins, each better than the last">51 Skins, jeder besser als der letzte</h2>
+      <p class="sub" data-de="Mit jedem Prestige schaltest du einen neuen Charakter-Skin frei: erst Kopfschmuck und Umhang, dann Flügel, Aura und Funken, am Ende der Goldene Ewige. Skins sind reine Optik und liegen immer hinter deiner Waffe. Hier eine Auswahl aus 50 Prestige-Stufen." data-en="Every prestige unlocks a new character skin: first headgear and cape, then wings, aura and sparks, finally the Golden Eternal. Skins are purely cosmetic and always sit behind your weapon. Here is a selection from 50 prestige ranks.">Mit jedem Prestige schaltest du einen neuen Charakter-Skin frei: erst Kopfschmuck und Umhang, dann Flügel, Aura und Funken, am Ende der Goldene Ewige. Skins sind reine Optik und liegen immer hinter deiner Waffe. Hier eine Auswahl aus 50 Prestige-Stufen.</p>
+      <div class="skins" tabindex="0" aria-label="Skins"><div class="skin"><img src="img/skin0.webp" width="150" height="200" loading="lazy" alt="Geisterschmied"><span data-de="Start" data-en="Start">Start</span><b data-de="Geisterschmied" data-en="Ghost smith">Geisterschmied</b></div><div class="skin"><img src="img/skin1.webp" width="150" height="200" loading="lazy" alt="Schatten-Wanderer"><span data-de="Prestige 1" data-en="Prestige 1">Prestige 1</span><b data-de="Schatten-Wanderer" data-en="Shadow wanderer">Schatten-Wanderer</b></div><div class="skin"><img src="img/skin11.webp" width="150" height="200" loading="lazy" alt="Schatten-Krieger"><span data-de="Prestige 11" data-en="Prestige 11">Prestige 11</span><b data-de="Schatten-Krieger" data-en="Shadow warrior">Schatten-Krieger</b></div><div class="skin"><img src="img/skin21.webp" width="150" height="200" loading="lazy" alt="Schatten-Wächter"><span data-de="Prestige 21" data-en="Prestige 21">Prestige 21</span><b data-de="Schatten-Wächter" data-en="Shadow guardian">Schatten-Wächter</b></div><div class="skin"><img src="img/skin31.webp" width="150" height="190" loading="lazy" alt="Schatten-Champion"><span data-de="Prestige 31" data-en="Prestige 31">Prestige 31</span><b data-de="Schatten-Champion" data-en="Shadow champion">Schatten-Champion</b></div><div class="skin"><img src="img/skin41.webp" width="150" height="190" loading="lazy" alt="Schatten-Legende"><span data-de="Prestige 41" data-en="Prestige 41">Prestige 41</span><b data-de="Schatten-Legende" data-en="Shadow legend">Schatten-Legende</b></div><div class="skin top"><img src="img/skin50.webp" width="150" height="190" loading="lazy" alt="Goldener Ewiger"><span data-de="Prestige 50" data-en="Prestige 50">Prestige 50</span><b data-de="Goldener Ewiger" data-en="Golden eternal">Goldener Ewiger</b></div></div>
+    </section>
+
+    <section id="faq">
+      <div class="faqbox"><p><span data-de="&lt;b&gt;Viel zum Nachlesen:&lt;/b&gt; Im Spiel erklärt dir das FAQ unter „Mehr“ alle Systeme, und fast jedes Fenster hat ein ⓘ mit Details, Tabellen und Chancen." data-en="&lt;b&gt;Lots to read up on:&lt;/b&gt; in the game the FAQ under “More” explains every system, and nearly every window has an ⓘ with details, tables and odds."><b>Viel zum Nachlesen:</b> Im Spiel erklärt dir das FAQ unter „Mehr“ alle Systeme, und fast jedes Fenster hat ein ⓘ mit Details, Tabellen und Chancen.</span></p><a class="btn alt" href="game/spiel.html" data-de="▶ Spiel öffnen" data-en="▶ Open game">▶ Spiel öffnen</a></div>
     </section>
 
     <section id="installieren">
