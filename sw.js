@@ -1,7 +1,7 @@
 /* Service Worker: macht die Seite installierbar und das Spiel offline spielbar.
    Spiel und Startseite: erst Netz, bei Fehler Cache (so kommen Updates sofort an).
    Bilder und Icons: Cache zuerst. */
-const VER='gf-v18';
+const VER='gf-v19';
 const SHELL=['./','index.html','game/spiel.html','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png','shot-kampf.jpg','shot-upgrade.jpg'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(VER).then(c=>c.addAll(SHELL).catch(()=>{})).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==VER).map(x=>caches.delete(x)))).then(()=>self.clients.claim()))});
