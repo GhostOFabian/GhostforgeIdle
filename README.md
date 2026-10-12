@@ -10,6 +10,7 @@ Installierbar als App (PWA), läuft offline.
 | `index.html` | Startseite mit Handy-Simulation (Gerät wählen, drehen, neu laden, Vollbild) |
 | `game/index.html` | Das Spiel (Live-Version ohne Admin-Code) |
 | `manifest.webmanifest`, `sw.js`, `icons/` | App-Installation und Offline-Betrieb |
+| `impressum.html`, `datenschutz.html` | **Vorlagen**: gelb markierte Stellen mit deinen Daten ausfüllen (siehe unten) |
 | `shot-*.jpg` | Bilder für Startseite und Link-Vorschau |
 | `.nojekyll` | Sagt GitHub Pages, dass keine Jekyll-Verarbeitung nötig ist |
 
@@ -37,3 +38,9 @@ Die Seite holt neue Versionen automatisch, sobald du online bist.
 - **Handy:** Auf kleinen Bildschirmen zeigt die Startseite statt des Handy-Fensters den Knopf „Vollbild spielen“.
   Als installierte App startet das Spiel direkt im Vollbild.
 - **iPhone:** Installieren über Teilen → „Zum Home-Bildschirm“ (Safari).
+
+## Recht und Datenschutz (Hinweis, keine Rechtsberatung)
+
+- Das Spiel und die Startseite laden **nichts von fremden Servern** (keine Google Fonts, keine Skripte, keine Tracker, keine Cookies). Spielstand und Einstellungen liegen nur im Browser.
+- `impressum.html` und `datenschutz.html` sind Vorlagen. Vor dem Veröffentlichen **deine Angaben eintragen** und den orangen Hinweiskasten löschen.
+- Wer Skins oder Codes verkauft oder Einnahmen erzielt, betreibt die Seite geschäftsmäßig: Impressum ist dann Pflicht, dazu kommen Steuer- und Verbraucherrecht. GitHub Pages ist laut GitHub nicht zum Betrieb eines Online-Shops gedacht.
