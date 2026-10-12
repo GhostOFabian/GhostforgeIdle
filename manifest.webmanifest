@@ -2,7 +2,7 @@
   "name": "Ghostforge Idle",
   "short_name": "Ghostforge",
   "description": "Schmiede Geister-Waffen und besiege jeden Boss.",
-  "start_url": "game/index.html",
+  "start_url": "game/spiel.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",

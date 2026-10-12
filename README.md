@@ -8,7 +8,8 @@ Installierbar als App (PWA), läuft offline.
 | Datei | Zweck |
 |---|---|
 | `index.html` | Startseite mit Handy-Simulation (Gerät wählen, drehen, neu laden, Vollbild) |
-| `game/index.html` | Das Spiel (Live-Version ohne Admin-Code) |
+| `game/spiel.html` | Das Spiel (Live-Version ohne Admin-Code). Heißt absichtlich nicht `index.html`, damit es nicht mit der Startseite verwechselt wird |
+| `game/index.html` | Winzige Weiterleitung auf `spiel.html` (für alte Links und installierte Apps) |
 | `manifest.webmanifest`, `sw.js`, `icons/` | App-Installation und Offline-Betrieb |
 | `impressum.html`, `datenschutz.html` | **Vorlagen**: gelb markierte Stellen mit deinen Daten ausfüllen (siehe unten) |
 | `shot-*.jpg` | Bilder für Startseite und Link-Vorschau |
@@ -25,9 +26,9 @@ Installierbar als App (PWA), läuft offline.
 
 ## Neue Spielversion einspielen
 
-Die Spieldatei `game/index.html` ist die Live-Version des Spiels mit einigen Zeilen im `<head>`
+Die Spieldatei `game/spiel.html` (NICHT die `index.html` im obersten Ordner!) ist die Live-Version des Spiels mit einigen Zeilen im `<head>`
 (Manifest, App-Symbol, Service Worker). Neue Versionen lasse ich dir am besten als fertiges Paket bauen.
-Von Hand: `game/index.html` auf GitHub öffnen, Stift-Symbol, Inhalt ersetzen und die Zeilen zwischen
+Von Hand: `game/spiel.html` auf GitHub öffnen, Stift-Symbol, Inhalt ersetzen und die Zeilen zwischen
 `<title>` und `<style>` (`manifest`, `apple-touch-icon`, `serviceWorker`) behalten.
 Die Seite holt neue Versionen automatisch, sobald du online bist.
 
