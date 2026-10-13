@@ -693,6 +693,7 @@ body.eco *,body.eco *::before,body.eco *::after{animation-iteration-count:1!impo
     <button onclick="showInfo('save')" aria-label="Spielstand sichern" title="Spielstand sichern"><b>💾</b><span>Sichern</span></button>
     <button id="sndBtn" onclick="sndToggle()" aria-label="Ton ein/aus" title="Ton ein/aus">🔊 Ton an</button>
     <button id="themeBtn" onclick="toggleTheme()">Theme</button>
+    <button id="dgBtn" onclick="dgShow()" title="Zeigt Zustand und letzte Bedienung, falls das Spiel abstürzt">🩺 Absturz-Bericht</button>
     <button id="shellBtn" onclick="shellToggle()" title="Seite ohne Scrollen (App-Layout). Bei Abstürzen auf dem iPhone ausschalten.">📐 App-Layout</button>
     <button id="ecoBtn" onclick="ecoToggle()" title="Weniger Animationen und seltener zeichnen, spart Akku">🔋 Sparmodus</button>
     <button onclick="resetGame()"><b>🔄</b><span>Reset</span></button>
@@ -801,6 +802,6 @@ body.eco *,body.eco *::before,body.eco *::after{animation-iteration-count:1!impo
   </div>
 </div>
 
-<script src="spiel.js?v=0.32s"></script>
+<script src="spiel.js?v=0.32t"></script>
 </body>
 </html>
