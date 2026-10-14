@@ -224,7 +224,7 @@ details.sec.ov.show>summary::after{content:'✕';margin-left:auto;font-size:1.1r
 @keyframes amblink{0%,100%{box-shadow:0 0 4px 0 rgba(255,210,74,.4)}50%{box-shadow:0 0 18px 4px rgba(255,210,74,.95)}}
 @media(prefers-reduced-motion:reduce){.amcraft.rdy{animation:none;box-shadow:0 0 12px 2px rgba(255,210,74,.9)}}
 .rbon.ovopen,.rbon.rbeq{animation:rbcol 7s steps(4,end) infinite}
-.gci{display:inline-block;width:1.15em;height:1.15em;vertical-align:-.22em;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='11' fill='%236d3fc4' stroke='%23f2c14e' stroke-width='1.8'/%3E%3Cpath d='M7 18V11.5a5 5 0 0 1 10 0V18l-1.67-1.5-1.66 1.5-1.67-1.5-1.67 1.5-1.66-1.5z' fill='%23fff'/%3E%3Ccircle cx='10.3' cy='11.4' r='1.1' fill='%232a1458'/%3E%3Ccircle cx='13.7' cy='11.4' r='1.1' fill='%232a1458'/%3E%3C/svg%3E") center/contain no-repeat}@property --rbc{syntax:'<color>';inherits:true;initial-value:#ff6ad5}
+#wtree .row>.small,#abyss label.row>.small{flex:1 1 0%;min-width:0}#wtree .row>button,#wtree .row>.ok{flex:none}.gci{display:inline-block;width:1.15em;height:1.15em;vertical-align:-.22em;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='11' fill='%236d3fc4' stroke='%23f2c14e' stroke-width='1.8'/%3E%3Cpath d='M7 18V11.5a5 5 0 0 1 10 0V18l-1.67-1.5-1.66 1.5-1.67-1.5-1.67 1.5-1.66-1.5z' fill='%23fff'/%3E%3Ccircle cx='10.3' cy='11.4' r='1.1' fill='%232a1458'/%3E%3Ccircle cx='13.7' cy='11.4' r='1.1' fill='%232a1458'/%3E%3C/svg%3E") center/contain no-repeat}@property --rbc{syntax:'<color>';inherits:true;initial-value:#ff6ad5}
 @keyframes rbcol{0%,100%{--rbc:#ff5f6d}17%{--rbc:#ffc371}33%{--rbc:#f4ee6a}50%{--rbc:#6dff9c}67%{--rbc:#5fd1ff}83%{--rbc:#b57bff}}
 @media(prefers-reduced-motion:reduce){.rbon{animation:none}}
 .cksk small{font-size:.8rem;font-weight:800;margin-top:1px;text-shadow:0 1px 3px #000}.cksk[hidden]{display:none!important}.cksk.rdy{animation:cskpulse 1.1s ease-in-out infinite}.cksk:active{transform:scale(.92)}
@@ -685,6 +685,7 @@ body.eco *,body.eco *::before,body.eco *::after{animation-iteration-count:1!impo
   <summary>☰ Mehr</summary>
   <div class="body"><div class="mgrid">
     <button id="dk-sk" onclick="ovOpen('ov-sk')"><b>🌳</b><span>Passiv</span></button>
+    <button id="dk-wt" onclick="ovOpen('ov-wt')"><b>🌌</b><span>Weltenbaum</span></button>
     <button id="dk-book" onclick="ovOpen('ov-book')"><b>📚</b><span>Buch</span></button>
     <button id="dk-info" onclick="ovOpen('ov-info')"><b>📖</b><span>Info</span></button>
     <button id="guideBtn" onclick="showInfo('guide')" aria-label="Anleitung">❓ Anleitung</button>
@@ -710,6 +711,10 @@ body.eco *,body.eco *::before,body.eco *::after{animation-iteration-count:1!impo
 <details class="sec ov" id="ov-book">
   <summary>📚 Sammlung &amp; Erfolge</summary>
   <div class="body" id="book"></div>
+</details>
+<details class="sec ov" id="ov-wt">
+  <summary>🌌 Weltenbaum &amp; Meisterungen</summary>
+  <div class="body" id="wtree"></div>
 </details>
 <details class="sec ov" id="ov-sk">
   <summary>🌳 Passiver Baum <button class="i" aria-label="Info Skills" onclick="info(event,'skills')">i</button></summary>
@@ -803,6 +808,6 @@ body.eco *,body.eco *::before,body.eco *::after{animation-iteration-count:1!impo
   </div>
 </div>
 
-<script src="spiel.js?v=0.33d"></script>
+<script src="spiel.js?v=0.33e"></script>
 </body>
 </html>
