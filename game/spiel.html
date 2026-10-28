@@ -220,6 +220,17 @@ details.sec.ov.show>summary::after{content:'✕';margin-left:auto;font-size:1.1r
 .amslot{grid-column:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;width:92px;min-height:76px;padding:6px;border:2px dashed var(--bd);border-radius:14px;background:rgba(127,127,127,.08)}
 .amslot.on{border:2px solid #ffd54a;box-shadow:0 0 14px rgba(255,213,74,.7);background:rgba(255,213,74,.12)}.amslot.off{border:2px solid var(--bd);opacity:.7}.amic{font-size:2rem;line-height:1}
 .amcraft{grid-column:3;justify-self:start;display:flex;flex-direction:column;align-items:center;gap:1px;padding:6px 10px;font-size:.8rem;min-height:0;opacity:.85}.amcraft small{font-size:.65rem;opacity:.85}
+#craft .hwc{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}#craft .hwc button{flex:1 1 0;min-width:0;min-height:0;padding:5px 2px;display:flex;flex-direction:column;align-items:center;gap:0;font-size:.64rem;text-align:center;overflow:hidden}.hwbar{position:sticky;bottom:0;background:var(--card);border-top:1px solid var(--bd);padding:0 0 6px;margin-top:8px;z-index:2}#craft .hwc button b{font-size:1.25rem;line-height:1.2}#craft .hwc button small{font-size:.6rem;opacity:.8}#craft .hwc button.on{background:var(--ac);color:#fff;border-color:var(--ac)}#craft .hwc button.lk{opacity:.5}.hwmat{display:flex;flex-wrap:wrap;gap:6px;font-weight:700;font-size:.85rem}.hwmat span{padding:3px 8px;border-radius:10px;background:rgba(127,127,127,.14)}#craft .hwgrid{display:grid;grid-template-columns:auto repeat(6,minmax(0,1fr));gap:4px;align-items:center}#craft .hwgrid button{min-height:0;padding:6px 0;font-size:.72rem}#craft .hwgrid button.on{background:var(--ac);color:#fff}#craft .hwgrid button.lk{opacity:.5}
+#ckpop .ckbox{width:100%;max-width:640px;height:100dvh;max-height:100dvh;border-radius:0!important;display:flex;flex-direction:column;overflow:hidden;padding:8px 10px calc(8px + env(safe-area-inset-bottom));box-sizing:border-box}
+#ckpop .ckbox>*{flex:0 0 auto}#ckpop .ckbox>.ckaw{flex:1 1 auto}
+#ckpop .ckaw{position:relative;min-height:36vh;display:flex;margin:6px 0}#ckpop .ckaw .ckarena{flex:1 1 auto;height:auto;min-height:0;margin:0;width:100%}
+.ckwbig{position:absolute;left:3px;bottom:3px;width:30%;max-width:190px;aspect-ratio:1;pointer-events:none;z-index:7;transform-origin:30% 90%}.ckwbig img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 4px 6px rgba(0,0,0,.55))}.ckwbig span{display:block;font-size:72px;line-height:1.1;text-align:center}
+.ckwbig.lg{animation:cklg .28s ease-out}.ckwbig.cr{animation:cklgc .36s ease-out}
+@keyframes cklg{0%{transform:rotate(0)}35%{transform:rotate(-24deg) translate(8%,-6%)}70%{transform:rotate(16deg) translate(30%,-12%) scale(1.06)}100%{transform:rotate(0)}}
+@keyframes cklgc{0%{transform:rotate(0)}30%{transform:rotate(-34deg) translate(6%,-10%) scale(1.1)}65%{transform:rotate(22deg) translate(42%,-18%) scale(1.22)}100%{transform:rotate(0)}}
+@media(prefers-reduced-motion:reduce){.ckwbig.lg,.ckwbig.cr{animation:none}}
+#ckpop .ckbtm{display:flex;gap:6px;margin-top:6px}#ckpop .ckbtm button{flex:1 1 0;min-height:40px;margin:0!important;width:auto!important;font-size:.82rem}
+#matbar{cursor:pointer;font-size:.78rem}.mgh{grid-column:1/-1;margin:6px 0 0;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;opacity:.7}
 .amcraft.rdy{opacity:1;border-color:#ffd54a;background:linear-gradient(135deg,rgba(255,210,74,.25),rgba(160,90,255,.25));animation:amblink 1s ease-in-out infinite}
 @keyframes amblink{0%,100%{box-shadow:0 0 4px 0 rgba(255,210,74,.4)}50%{box-shadow:0 0 18px 4px rgba(255,210,74,.95)}}
 @media(prefers-reduced-motion:reduce){.amcraft.rdy{animation:none;box-shadow:0 0 12px 2px rgba(255,210,74,.9)}}
@@ -558,7 +569,7 @@ body.eco *,body.eco *::before,body.eco *::after{animation-iteration-count:1!impo
 
 <div class="top">
   <h1>👻 Ghostforge Idle <span class="ver" id="ver"></span></h1>
-  <div class="hdr"><span class="flags"><button class="flag" id="fl-de" onclick="setLang('de')" aria-label="Deutsch" title="Deutsch"><svg viewBox="0 0 5 3" width="30" height="18" aria-hidden="true"><rect width="5" height="1" fill="#000"/><rect y="1" width="5" height="1" fill="#d00"/><rect y="2" width="5" height="1" fill="#ffce00"/></svg></button><button class="flag" id="fl-en" onclick="setLang('en')" aria-label="English" title="English"><svg viewBox="0 0 60 30" width="30" height="18" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0 0L60 30M60 0L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0L60 30M60 0L0 30" stroke="#c8102e" stroke-width="2.5"/><path d="M30 0V30M0 15H60" stroke="#fff" stroke-width="10"/><path d="M30 0V30M0 15H60" stroke="#c8102e" stroke-width="6"/></svg></button></span><span class="gold">💰 <span id="gold">0</span></span> <span class="gold" title="Ghost Coins"><i class="gci"></i> <span id="cu">0</span></span> <span class="gold" id="luckbar" style="font-size:.78rem"></span></div>
+  <div class="hdr"><span class="flags"><button class="flag" id="fl-de" onclick="setLang('de')" aria-label="Deutsch" title="Deutsch"><svg viewBox="0 0 5 3" width="30" height="18" aria-hidden="true"><rect width="5" height="1" fill="#000"/><rect y="1" width="5" height="1" fill="#d00"/><rect y="2" width="5" height="1" fill="#ffce00"/></svg></button><button class="flag" id="fl-en" onclick="setLang('en')" aria-label="English" title="English"><svg viewBox="0 0 60 30" width="30" height="18" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0 0L60 30M60 0L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0L60 30M60 0L0 30" stroke="#c8102e" stroke-width="2.5"/><path d="M30 0V30M0 15H60" stroke="#fff" stroke-width="10"/><path d="M30 0V30M0 15H60" stroke="#c8102e" stroke-width="6"/></svg></button></span><span class="gold">💰 <span id="gold">0</span></span> <span class="gold" title="Ghost Coins"><i class="gci"></i> <span id="cu">0</span></span> <span class="gold" id="luckbar" style="font-size:.78rem"></span> <span class="gold" id="matbar" title="Handwerk-Material (Tipp: Handwerk öffnen)" onclick="ovOpen('ov-craft')"></span></div>
 </div>
 
 <div id="toast" class="toast" hidden></div>
@@ -568,10 +579,10 @@ body.eco *,body.eco *::before,body.eco *::after{animation-iteration-count:1!impo
 <nav id="dock" aria-label="Menü">
   <button id="dk-ch" class="on" onclick="ovClose();upTab('ch')"><b>🧍</b><span>Charakter</span></button>
   <button id="dk-main" onclick="ovClose();upTab('up')"><b>⚡</b><span>Upgrade</span></button>
+  <button id="dk-craft" onclick="ovOpen('ov-craft')"><b>🔨</b><span>Handwerk</span></button>
   <button id="dk-boss" onclick="ovOpen('ov-boss')"><b>👹</b><span>Kämpfen</span></button>
   <button id="dk-inv" onclick="ovOpen('ov-inv')"><b>🎒</b><span>Inventar</span></button>
   <button id="dk-shop" onclick="ovOpen('ov-shop')"><b>🛒</b><span>Shop</span></button>
-  <button id="dk-play" onclick="ovOpen('ov-play')"><b>🎰</b><span>Glück</span></button>
   <button id="dk-more" onclick="ovOpen('ov-more')"><b>☰</b><span>Mehr</span></button>
 </nav>
 <div id="tipbox" hidden></div>
@@ -630,6 +641,11 @@ body.eco *,body.eco *::before,body.eco *::after{animation-iteration-count:1!impo
 
 
 
+<details class="sec ov" id="ov-craft">
+  <summary>🔨 Handwerk <button class="i" aria-label="Info Handwerk" onclick="info(event,'hwhelp')">i</button></summary>
+  <div class="body" id="craft"></div>
+</details>
+
 <details class="sec ov" id="ov-play">
   <summary>🎰 Glücksspiel <span id="playRes" class="small" style="margin-left:8px;white-space:nowrap"></span></summary>
   <div class="body">
@@ -684,14 +700,19 @@ body.eco *,body.eco *::before,body.eco *::after{animation-iteration-count:1!impo
 <details class="sec ov" id="ov-more">
   <summary>☰ Mehr</summary>
   <div class="body"><div class="mgrid">
+    <b class="mgh">Fortschritt</b>
     <button id="dk-sk" onclick="ovOpen('ov-sk')"><b>🌳</b><span>Passiv</span></button>
     <button id="dk-wt" onclick="ovOpen('ov-wt')"><b>🌌</b><span>Weltenbaum</span></button>
     <button id="dk-book" onclick="ovOpen('ov-book')"><b>📚</b><span>Buch</span></button>
-    <button id="dk-info" onclick="ovOpen('ov-info')"><b>📖</b><span>Info</span></button>
+    <b class="mgh">Spiel</b>
+    <button id="dk-play" onclick="ovOpen('ov-play')"><b>🎰</b><span>Glück</span></button>
+    <button onclick="showInfo('profile')" aria-label="Profil"><b>👤</b><span>Profil</span></button>
+    <b class="mgh">Hilfe</b>
     <button id="guideBtn" onclick="showInfo('guide')" aria-label="Anleitung">❓ Anleitung</button>
     <button onclick="showInfo('faq')" aria-label="FAQ und Suche"><b>🔎</b><span>FAQ</span></button>
     <button id="tutBtn" onclick="showInfo('tutorial')" aria-label="Erste Schritte"><b>🎓</b><span>Erste Schritte</span><span id="tutBang" class="bang" hidden>!</span></button>
-    <button onclick="showInfo('profile')" aria-label="Profil"><b>👤</b><span>Profil</span></button>
+    <button id="dk-info" onclick="ovOpen('ov-info')"><b>📖</b><span>Info</span></button>
+    <b class="mgh">System</b>
     <button onclick="showInfo('save')" aria-label="Spielstand sichern" title="Spielstand sichern"><b>💾</b><span>Sichern</span></button>
     <button id="sndBtn" onclick="sndToggle()" aria-label="Ton ein/aus" title="Ton ein/aus">🔊 Ton an</button>
     <button id="themeBtn" onclick="toggleTheme()">Theme</button>
@@ -766,13 +787,11 @@ body.eco *,body.eco *::before,body.eco *::after{animation-iteration-count:1!impo
     <div class="small" id="ckRel"></div>
     <div class="ckwb" id="ckWpn" onclick="clickSwapOpen()" style="cursor:pointer" title="Waffe wechseln"></div><div id="ckSwap" hidden style="display:grid;gap:4px;margin-top:4px"></div>
     <div id="ckBars"></div>
-    <div class="ckarena" id="ckArena"></div>
+    <div class="ckaw"><div class="ckarena" id="ckArena"></div><div class="ckwbig" id="ckWbig" aria-hidden="true"></div></div>
     <div class="row" style="border:0;padding:0"><span class="small">⚡ Angriffs-Ladung</span><button class="i" aria-label="Info" onclick="showInfo('ckhelp')">i</button></div><span id="ckBon" hidden></span><div class="bar"><i id="ckCh"></i></div>
     <div class="small" id="ckphpT" style="margin-top:6px"></div><div class="bar me"><i id="ckphp"></i></div>
     <div class="cksks"><button id="ckSkB" class="cksk" hidden onpointerdown="event.preventDefault();clickSkill()" aria-label="Basis-Skill (Strg)"></button><button id="ckUlB" class="cksk cksul" hidden onpointerdown="event.preventDefault();clickUlt()" aria-label="Ultimate (Y)"></button><button id="ckElB" class="cksk cksel" hidden onpointerdown="event.preventDefault();clickElite()" aria-label="Elite-Skill (Alt)"></button><button id="ckCsB" class="cksk skcs" hidden onpointerdown="event.preventDefault();clickClass()" aria-label="Klassen-Skill (X)"></button><button id="ckShB" class="cksk cksh" onpointerdown="event.preventDefault();clickBlock()" aria-label="Schild"></button></div>
-    <div style="margin-top:8px"><button id="ckAuto" onclick="clickAuto()" hidden style="width:100%">🤖 Auto: AUS</button></div>
-    <button class="ghost" id="ckSkip" onclick="clickSkipQ()" style="margin-top:6px;width:100%" hidden>⏭ Sofort beenden</button>
-    <button class="ghost" onclick="clickEnd(false,true)" style="margin-top:6px;width:100%">🏳 Aufgeben</button>
+    <div class="ckbtm"><button id="ckAuto" onclick="clickAuto()" hidden>🤖 Auto: AUS</button><button class="ghost" id="ckSkip" onclick="clickSkipQ()" hidden>⏭ Sofort beenden</button><button class="ghost" onclick="clickEnd(false,true)">🏳 Aufgeben</button></div>
     <div class="small" id="ckLog" style="margin-top:6px"></div>
     <div class="small" id="ckShNote" hidden>🛡 Gegner mit Schild blocken manche Angriffe.</div>
   </div>
@@ -808,6 +827,6 @@ body.eco *,body.eco *::before,body.eco *::after{animation-iteration-count:1!impo
   </div>
 </div>
 
-<script src="spiel.js?v=0.33f"></script>
+<script src="spiel.js?v=0.34c"></script>
 </body>
 </html>
